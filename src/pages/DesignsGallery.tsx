@@ -65,7 +65,7 @@ export default function DesignsGallery() {
 
       // If there's a thumbnail, delete it from storage
       if (design?.thumbnail_url) {
-        const filePath = ${id}.jpg;
+        const filePath = `${id}.jpg`;
         await supabase.storage
           .from('design-thumbnails')
           .remove([filePath]);
@@ -189,7 +189,7 @@ export default function DesignsGallery() {
                   {design.thumbnail_url ? (
                     <img
                       src={design.thumbnail_url}
-                      alt={Design ${design.customer_name}}
+                      alt={`Design ${design.customer_name}`}
                       className="h-full w-full object-cover"
                     />
                   ) : (
